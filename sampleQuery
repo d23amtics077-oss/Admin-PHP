@@ -1,0 +1,34 @@
+SELECT subCat.name,subCat.description,mainCat.name,mainCat.description
+FROM tbl_subcategory as subCat
+INNER JOIN tbl_maincategory as mainCat
+    ON subCat.mainCatId=mainCat.id where mainCat.name="Men's";
+
+
+
+
+
+    SELECT p.id, p.name, p.description, p.brand, p.base_price, p.selling_price, p.status, p.created_at, sc.name AS subcategory_name FROM tbl_productstable p LEFT JOIN tbl_subcategory sc ON p.sub_category_id = sc.id where sc.id =11;
+
+
+
+
+    New 
+
+    SELECT p.id,
+ p.name,
+  p.description,
+   p.brand,
+    p.base_price,
+     p.selling_price,
+      p.status,
+       p.created_at,
+       p.sub_category_id,
+       sc.mainCatId,
+       mainCat.MainName,
+        sc.name AS subcategory_name
+        
+         FROM tbl_productstable p 
+         LEFT JOIN tbl_subcategory sc
+          ON p.sub_category_id = sc.id
+          LEFT JOIN tbl_maincategory as mainCat
+          ON mainCat.id=sc.mainCatId;
