@@ -25,8 +25,8 @@ VALUES
 ('$productName', '$brandName', '$basePrice', '$sellingPrice', '$subCategoryId', '$status','$description','$filename')";
 
 move_uploaded_file
-( $_FILES["mens"]["tmp_name"],
-'C:\wamp64\www\apifolder\Uploads\mens'.$filename );
+( $_FILES["image"]["tmp_name"],
+'../Uploads/mens/'.$filename );
 
 $result = mysqli_query($conn, $sql); 
 

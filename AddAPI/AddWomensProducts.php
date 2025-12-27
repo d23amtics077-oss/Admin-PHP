@@ -16,14 +16,17 @@ $subCategoryId = $_POST['sub_category_id'];
 $status        = $_POST['status'];
 $description   = $_POST['description'];
 
-
 $exe=pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
 $filename = time().random_int(1111,9999).".".$exe;
 
 $sql = "INSERT INTO tbl_productstable 
 (name, brand, base_price, selling_price, sub_category_id, status, description,image)
 VALUES 
-('$productName', '$brandName', '$basePrice', '$sellingPrice', '$subCategoryId', '$status', '$description','$filename')";
+('$productName', '$brandName', '$basePrice', '$sellingPrice', '$subCategoryId', '$status','$description','$filename')";
+
+move_uploaded_file
+( $_FILES["image"]["tmp_name"],
+'../Uploads/womens/'.$filename );
 
 $result = mysqli_query($conn, $sql); 
 

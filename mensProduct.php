@@ -12,6 +12,7 @@ $response = array();
 $sql = "SELECT 
             p.id,
             p.name,
+            p.image,
             p.description,
             p.brand,
             p.base_price,
